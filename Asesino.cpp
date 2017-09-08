@@ -4,29 +4,29 @@ Asesino::Asesino() {
 
 }
 
-Coraza::Coraza(int pdureza, int pcantidad) {
-	dureza = pdureza;
-	cantidad = pcantidad;;
-}
-
-Coraza::Coraza(string pnombre, string pciudad, int pedad, int pdureza, int pcantidad): Soldado(pnombre, pciudad, pedad) {
-	dureza = pdureza;
+Asesino::Asesino(int pcantidad, int pcapacidad) {
 	cantidad = pcantidad;
+	capacidad = pcapacidad;
 }
 
-int Coraza::getDureza() {
-	return dureza;
+Asesino::Asesino(string pnombre, string pciudad, int pedad, int pcantidad, int pcapacidad): Soldado(pnombre, pciudad, pedad) {
+	cantidad = pcantidad;
+	capacidad = pcapacidad;
 }
 
-void Coraza::setDureza(int pdureza) {
-	dureza = pdureza;
-}
-
-int Coraza::getCantidad() {
+int Asesino::getCantidad() {
 	return cantidad;
 }
 
-void Coraza::setCantidad(int pcantidad) {
+void Asesino::setCantidad(int pcantidad) {
 	cantidad = pcantidad;
+}
+
+int Asesino::getCapacidad() {
+	return capacidad;
+}
+
+void Asesino::setCapacidad(int pcapacidad) {
+	capacidad = pcapacidad;
 }
 

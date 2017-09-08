@@ -9,12 +9,12 @@ class Asesino: public Soldado {
 		int cantidad;
 		int capacidad;
 	public:
-		Coraza();
-		Coraza(int, int);
-		Coraza(string, string, int, int, int);
+		Asesino();
+		Asesino(int, int);
+		Asesino(string, string, int, int, int);
 		int getCantidad();
 		void setCantidad(int);
-		int setCapacidad();
+		int getCapacidad();
 		void setCapacidad(int);
 };
 
