@@ -16,6 +16,8 @@ class Coraza: public Soldado {
 		void setDureza(int);
 		int getCantidad();
 		void setCantidad(int);
+		double ataque();
+		double defensa();
 };
 
 #endif

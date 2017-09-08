@@ -30,3 +30,11 @@ void Arquero::setPrecision(int pprecision) {
 	precision = pprecision;
 }
 
+double Arquero::ataque() {
+	return flechas * precision / 1000;
+}
+
+double Arquero::defensa() {
+	return 0;
+}
+

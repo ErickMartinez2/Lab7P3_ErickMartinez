@@ -16,6 +16,8 @@ class Asesino: public Soldado {
 		void setCantidad(int);
 		int getCapacidad();
 		void setCapacidad(int);
+		double ataque();
+		double defensa();
 };
 
 #endif

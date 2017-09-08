@@ -30,3 +30,11 @@ void Asesino::setCapacidad(int pcapacidad) {
 	capacidad = pcapacidad;
 }
 
+double Asesino::ataque() {
+	return cantidad;
+}
+
+double Asesino::defensa() {
+	return cantidad * 10;
+}
+

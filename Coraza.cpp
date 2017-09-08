@@ -30,3 +30,11 @@ void Coraza::setCantidad(int pcantidad) {
 	cantidad = pcantidad;
 }
 
+double Coraza::ataque() {
+	return cantidad;
+}
+
+double Coraza::defensa() {
+	return dureza;
+}
+

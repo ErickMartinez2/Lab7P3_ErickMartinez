@@ -34,3 +34,11 @@ void Soldado::setEdad(int pedad) {
 	edad = pedad;
 }
 
+double Soldado::ataque() {
+	return 0;
+}
+
+double Soldado::defensa() {
+	return 0;
+}
+
