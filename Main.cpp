@@ -57,6 +57,7 @@ int main() {
 						   << "3. Asesino Oculto" << endl
 						   << "Ingrese su opcion: ";
 					   int opcion3;
+					   cin >> opcion3;
 					   cout << endl;
 					   switch (opcion3) {
 						   case 1:{
@@ -70,6 +71,30 @@ int main() {
 									  Soldado* soldado = new Arquero(nombre, ciudad, edad, flechas, precision);
 									  escuadrones.at(opcion2).getSoldados().push_back(soldado);
 									  cout << "Arquero Agregado!!" << endl;
+								  }break;
+						   case 2:{
+									  cout << "-> Informacion Coraza Dura" << endl;
+									cout << "Ingrese la dureza de la armadura: ";
+									  int dureza;
+									  cin >> dureza;
+									  cout << "Ingrese la cantidad de lanzas: ";
+									  int cantidad;
+									  cin >> cantidad;
+									  Soldado* soldado = new Coraza(nombre, ciudad, edad, dureza, cantidad);
+									  escuadrones.at(opcion2).getSoldados().push_back(soldado);
+									  cout << "Coraza Dura Agregada!!" << endl;
+								  }break;
+						   case 3:{
+									  cout << "-> Informacion Asesino Oculto" << endl;
+									  cout << "Ingrese la cantidad de asesinatos: ";
+									  int cantidad;
+									  cin >> cantidad;
+									  cout << "Ingrese la capacidad de pasar desapercibido: ";
+									  int capacidad;
+									  cin >> capacidad;
+									  Soldado* soldado = new Asesino(nombre, ciudad, edad, cantidad, capacidad);
+									  escuadrones.at(opcion2).getSoldados().push_back(soldado);
+									  cout << "Asesino Oculto Agregado!!" << endl;
 								  }break;
 					   }
 				   }break;
@@ -87,5 +112,11 @@ int main() {
 				   }break;
 		}
 	} while (opcion != 4);
+	for (int i = 0; i < escuadrones.size(); i++) {
+		vector<Soldado*> soldado = escuadrones.at(i).getSoldados();
+		for (int j = 0; j < soldado.size(); j++) {
+			delete soldado.at(j);
+		}
+	}
 	return 0;
 }
