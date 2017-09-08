@@ -35,6 +35,6 @@ double Asesino::ataque() {
 }
 
 double Asesino::defensa() {
-	return cantidad * 10;
+	return capacidad * 10;
 }
 
