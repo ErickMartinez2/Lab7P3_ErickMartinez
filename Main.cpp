@@ -3,10 +3,56 @@
 #include "Arquero.h"
 #include "Coraza.h"
 #include "Asesino.h"
+#include <vector>
+#include <string>
+#include <iostream>
 using namespace std;
 
 int main() {
-	Escuadron* e = new Escuadron();
-	delete e;
+	int opcion;
+	vector<Escuadron> escuadrones;
+	do {
+		cout << endl;
+		cout << "*** Guerras Punicas ***" << endl
+			<< "1. Agregar Escuadron" << endl
+			<< "2. Agregar Soldado" << endl
+			<< "3. Simulacion" << endl
+			<< "4. Salir" << endl
+			<< "Ingrese su opción: ";
+		cin >> opcion;
+		cout << endl;
+		switch (opcion) {
+			case 1:{
+					   cout << "-> Agregar Escuadron" << endl;
+					   cout << "Ingrese el nombre del escuadron: ";
+					   string nombre;
+					   cin >> nombre;
+					   Escuadron escuadron(nombre);
+					   escuadrones.push_back(escuadron);
+					   cout << "Escuadron Agregado!!" << endl;
+				   }break;
+			case 2:{
+					   cout << "-> Agregar Escuadron" << endl;
+					   cout << "Ingrese el nombre del escuadron: ";
+					   string nombre;
+					   cin >> nombre;
+					   Escuadron escuadron(nombre);
+					   escuadrones.push_back(escuadron);
+					   cout << "Escuadron Agregado!!" << endl;
+				   }break;
+			case 3:{
+					   cout << "-> Agregar Escuadron" << endl;
+					   cout << "Ingrese el nombre del escuadron: ";
+					   string nombre;
+					   cin >> nombre;
+					   Escuadron escuadron(nombre);
+					   escuadrones.push_back(escuadron);
+					   cout << "Escuadron Agregado!!" << endl;
+				   }break;
+			case 4:{
+					   cout << "Hasta Pronto!!" << endl;
+				   }break;
+		}
+	} while (opcion != 4);
 	return 0;
 }
