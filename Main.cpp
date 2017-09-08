@@ -36,9 +36,17 @@ int main() {
 					   for (int i = 0; i < escuadrones.size(); i++) {
 						   cout << i  << ". Escuadron " << escuadrones.at(i).getNombre() << endl;
 					   }
-					   cout << "Ingrese el numero del escuadron: ";
+					   bool escuadron_correcto = false;
 					   int opcion2;
-					   cin >> opcion2;
+					   do {
+						   cout << "Ingrese el numero del escuadron: ";
+						   cin >> opcion2;
+						   if (opcion2 >= 0 && opcion2 < escuadrones.size()) {
+							   escuadron_correcto = true;
+						   } else {
+							   cout << "Escuadron Incorrecto!!" << endl;
+						   }
+					   } while (!escuadron_correcto);
 					   cout << endl;
 					   cout << "-> Informacion del Soldado" << endl;
 					   cout << "Ingrese el nombre: ";
@@ -74,9 +82,17 @@ int main() {
 								  }break;
 						   case 2:{
 									  cout << "-> Informacion Coraza Dura" << endl;
-									  cout << "Ingrese la dureza de la armadura: ";
 									  int dureza;
-									  cin >> dureza;
+									  bool correcta_dureza = false;;
+									  do {
+										  cout << "Ingrese la dureza de la armadura [1-10]: ";
+										  cin >> dureza;
+										  if (dureza >= 1 && dureza <= 10) {
+											  correcta_dureza = true;
+										  } else {
+											  cout << "Dureza Fuera de Rango!!" << endl;
+										  }
+									  } while (!correcta_dureza);
 									  cout << "Ingrese la cantidad de lanzas: ";
 									  int cantidad;
 									  cin >> cantidad;
@@ -89,9 +105,17 @@ int main() {
 									  cout << "Ingrese la cantidad de asesinatos: ";
 									  int cantidad;
 									  cin >> cantidad;
-									  cout << "Ingrese la capacidad de pasar desapercibido: ";
 									  int capacidad;
-									  cin >> capacidad;
+									  bool correcta_capacidad = false;;
+									  do {
+										  cout << "Ingrese la capacidad de pasar desapercibido [1-10]: ";
+										  cin >> capacidad;
+										  if (capacidad >= 1 && capacidad <= 10) {
+											  correcta_capacidad = true;
+										  } else {
+											  cout << "Capacidad Fuera de Rango!!" << endl;
+										  }
+									  } while (!correcta_capacidad);
 									  Soldado* soldado = new Asesino(nombre, ciudad, edad, cantidad, capacidad);
 									  escuadrones.at(opcion2).getSoldados().push_back(soldado);
 									  cout << "Asesino Oculto Agregado!!" << endl;
