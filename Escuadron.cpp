@@ -16,11 +16,11 @@ void Escuadron::setNombre(string pnombre) {
 	nombre = pnombre;
 }
 
-vector<Soldado> Escuadron::getSoldados() {
+vector<Soldado*> Escuadron::getSoldados() {
 	return soldados;
 }
 
-void Escuadron::setSoldados(vector<Soldado> psoldados) {
+void Escuadron::setSoldados(vector<Soldado*> psoldados) {
 	soldados = psoldados;
 }
 
