@@ -34,7 +34,7 @@ int main() {
 			case 2:{
 					   cout << "-> Agregar Soldado" << endl;
 					   for (int i = 0; i < escuadrones.size(); i++) {
-						   cout << i  << ". " << escuadrones.at(i).getNombre() << endl;
+						   cout << i  << ". Escuadron " << escuadrones.at(i).getNombre() << endl;
 					   }
 					   cout << "Ingrese el numero del escuadron: ";
 					   int opcion2;
@@ -74,7 +74,7 @@ int main() {
 								  }break;
 						   case 2:{
 									  cout << "-> Informacion Coraza Dura" << endl;
-									cout << "Ingrese la dureza de la armadura: ";
+									  cout << "Ingrese la dureza de la armadura: ";
 									  int dureza;
 									  cin >> dureza;
 									  cout << "Ingrese la cantidad de lanzas: ";
@@ -99,13 +99,57 @@ int main() {
 					   }
 				   }break;
 			case 3:{
-					   cout << "-> Agregar Escuadron" << endl;
-					   cout << "Ingrese el nombre del escuadron: ";
-					   string nombre;
-					   cin >> nombre;
-					   Escuadron escuadron(nombre);
-					   escuadrones.push_back(escuadron);
-					   cout << "Escuadron Agregado!!" << endl;
+					   cout << "-> Simulacion" << endl;
+					   for (int i = 0; i < escuadrones.size(); i++) {
+						   cout << i  << ". Escuadron " << escuadrones.at(i).getNombre() << endl;
+					   }
+					   cout << endl;
+					   cout << "-> Bando Alpha" << endl;
+					   cout << "Ingrese el numero del escuadron frontal: ";
+					   int escuadron_f1;
+					   cin >> escuadron_f1;
+					   cout << "Ingrese el numero del escuadron de retaguardia: ";
+					   int escuadron_r1;
+					   cin >> escuadron_r1;
+					   cout << endl;
+					   cout << "-> Bando Beta" << endl;
+					   cout << "Ingrese el numero del escuadron frontal: ";
+					   int escuadron_f2;
+					   cin >> escuadron_f2;
+					   cout << "Ingrese el numero del escuadron de retaguardia: ";
+					   int escuadron_r2;
+					   cin >> escuadron_r2;
+					   cout << endl;
+					   double ataque1;
+					   vector<Soldado*> soldado = escuadrones.at(escuadron_f1).getSoldados();
+					   for (int j = 0; j < soldado.size(); j++) {
+						   ataque1 += soldado.at(j) -> ataque();
+					   }
+					   double defensa1;
+					   vector<Soldado*> soldado2 = escuadrones.at(escuadron_r1).getSoldados();
+					   for (int j = 0; j < soldado2.size(); j++) {
+						   ataque1 += soldado2.at(j) -> ataque();
+					   }
+					   double ataque2;
+					   vector<Soldado*> soldado3 = escuadrones.at(escuadron_f2).getSoldados();
+					   for (int j = 0; j < soldado3.size(); j++) {
+						   ataque1 += soldado3.at(j) -> ataque();
+					   }
+					   double defensa2;
+					   vector<Soldado*> soldado4 = escuadrones.at(escuadron_r2).getSoldados();
+					   for (int j = 0; j < soldado4.size(); j++) {
+						   ataque1 += soldado4.at(j) -> ataque();
+					   }
+					   cout << "Simulacion Terminada!!" << endl;
+					   if (ataque1 > defensa2) {
+						   cout << "Ganador: Bando Alpha" << endl;
+					   } else {
+						   if (ataque2 > defensa1) {
+							   cout << "Ganador: Bando Beta" << endl;
+						   } else{
+							   cout << "Empate" << endl;
+						   }
+					   }
 				   }break;
 			case 4:{
 					   cout << "Hasta Pronto!!" << endl;
